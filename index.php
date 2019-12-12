@@ -6,6 +6,11 @@ $meta_data['ami-id'] = $ami_id = exec($curl_cmd." http://".$meta_host."/latest/m
 $meta_data['instance-id'] = $instance_id = exec($curl_cmd." http://".$meta_host."/latest/meta-data/instance-id/");
 $meta_data['availability-zone'] = $reg_az = exec($curl_cmd." http://".$meta_host."/latest/meta-data/placement/availability-zone/");
 $meta_data['public-hostname'] = $public_hostname = exec($curl_cmd." http://".$meta_host."/latest/meta-data/public-hostname/");
+$server_name = $_SERVER['SERVER_NAME'];
+$server_ip = $meta_data['public-ipv4'];
+$server_software = $_SERVER['SERVER_SOFTWARE'];
+$client_ip = $_SERVER['REMOTE_ADDR'];
+$client_agent = $_SERVER['HTTP_USER_AGENT'];
 
 /** find the availability zone **/
  function findAZ ($az) {
