@@ -14,3 +14,5 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 FLUSH PRIVILEGES;
+insert into users(username,password)values('demo','demo');
+insert into users(username,password)values('demo1','demo1');

@@ -1,4 +1,6 @@
 <?php
+// Initialize the session
+session_start();
 $curl_cmd = 'curl --connect-timeout 1';
 $meta_host = '169.254.169.254';
 $meta_data['ami-id'] = $ami_id = exec($curl_cmd." http://".$meta_host."/latest/meta-data/ami-id/");
@@ -35,9 +37,6 @@ $client_agent = $_SERVER['HTTP_USER_AGENT'];
  
 ?>
 <?php
-// Initialize the session
-session_start();
- 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   header("location: welcome.php");
